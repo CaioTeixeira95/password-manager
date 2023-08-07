@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      target: run-app
+    container_name: api
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/app?sslmode=disable
+    ports:
+      - 8000:8000
+
+  tests:
+    build:
+      context: .
+      target: run-test
+    container_name: tests
+    networks:
+      - mynet
+    depends_on:
+      - db

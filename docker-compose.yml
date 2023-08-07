@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    extends:
+      file: ./backend/docker-compose.yml
+      service: api
+  
+  frontend:
+    extends:
+      file: ./frontend/docker-compose.yml
+      service: frontend
