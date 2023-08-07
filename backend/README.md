@@ -14,6 +14,12 @@ $ docker-compose up --build
 $ go run main.go
 ```
 
+# Tests
+
+```sh
+$ go test -v -race -cover ./...
+```
+
 # Algorith & Approach
 
 ## Libraries
